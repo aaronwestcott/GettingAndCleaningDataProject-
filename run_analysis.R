@@ -84,3 +84,4 @@ names(data_processed)[2]<-"Activity"
 #sum
 data.dt<-data.table(data_processed)
 new.dt<-data.dt[, lapply(.SD, sum), by = list(Subject, Activity)]
+write.table(new.dt, "DataFile.txt", row.name=FALSE)
